@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Blue poison dart frog color scheme */
+  --background: #000000; /* Deep black like frog's body */
+  --foreground: #ffffff; /* Pure white for contrast */
+  --card: #1a1a1a; /* Dark gray for cards */
+  --card-foreground: #00ced1; /* Cyan for card text */
+  --popover: #0d0d0d; /* Darker gray for popovers */
+  --popover-foreground: #ffffff; /* White text */
+  --primary: rgb(22, 190, 241); /* Electric blue - main frog color */
+  --primary-foreground: #000000; /* Black text on blue */
+  --secondary: #008b8b; /* Teal accent */
+  --secondary-foreground: #ffffff; /* White text */
+  --muted: #1a1a1a; /* Muted background */
+  --muted-foreground: #cccccc; /* Light gray text */
+  --accent: #00ced1; /* Cyan accent */
+  --accent-foreground: #000000; /* Black text on cyan */
+  --destructive: #ff4500; /* Orange red for errors */
+  --destructive-foreground: #ffffff; /* White text */
+  --border: #444444; /* Gray borders */
+  --input: #1a1a1a; /* Dark input backgrounds */
+  --ring: #00bfff; /* Electric blue focus ring */
+  --chart-1: #00bfff; /* Electric blue */
+  --chart-2: #00ced1; /* Cyan */
+  --chart-3: #008b8b; /* Teal */
+  --chart-4: #00008b; /* Deep navy */
+  --chart-5: #1a1a1a; /* Dark gray */
+  --radius: 0.5rem;
+  --sidebar: #0d0d0d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00bfff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #00ced1;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #444444;
+  --sidebar-ring: #00bfff;
+}
+
+.dark {
+  /* Same colors for dark mode since we're already dark-themed */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #00ced1;
+  --popover: #0d0d0d;
+  --popover-foreground: #ffffff;
+  --primary: #00bfff;
+  --primary-foreground: #000000;
+  --secondary: #008b8b;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #cccccc;
+  --accent: #00ced1;
+  --accent-foreground: #000000;
+  --destructive: #ff4500;
+  --destructive-foreground: #ffffff;
+  --border: #444444;
+  --input: #1a1a1a;
+  --ring: #00bfff;
+  --chart-1: #00bfff;
+  --chart-2: #00ced1;
+  --chart-3: #008b8b;
+  --chart-4: #00008b;
+  --chart-5: #1a1a1a;
+  --sidebar: #0d0d0d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00bfff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #00ced1;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #444444;
+  --sidebar-ring: #00bfff;
+}
+
+@theme inline {
+  /* Updated to use Montserrat and Open Sans fonts */
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-open-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Enhanced animations for frog-like movements */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(0, 191, 255, 0.6);
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Added parallax scroll animation */
+  @keyframes parallax-float {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-20px) translateX(0px);
+    }
+    75% {
+      transform: translateY(-10px) translateX(-5px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  /* Added parallax float animation */
+  .animate-parallax-float {
+    animation: parallax-float 8s ease-in-out infinite;
+  }
+
+  /* Added smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+}
