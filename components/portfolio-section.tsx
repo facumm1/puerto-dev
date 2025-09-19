@@ -1,42 +1,50 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
 
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "Full-stack e-commerce solution with payment integration, inventory management, and analytics dashboard.",
-    image: "/modern-e-commerce-platform-interface.jpg",
-    tags: ["React", "Node.js", "PostgreSQL"],
-  },
-  {
-    title: "Healthcare Mobile App",
-    description: "Cross-platform mobile application for patient management and telemedicine consultations.",
-    image: "/healthcare-mobile-app.png",
-    tags: ["React Native", "Firebase", "WebRTC"],
-  },
-  {
-    title: "Data Analytics Dashboard",
-    description: "Real-time business intelligence dashboard with interactive charts and automated reporting.",
-    image: "/data-analytics-dashboard.png",
-    tags: ["Python", "D3.js", "MongoDB"],
-  },
-  {
-    title: "Fintech Web App",
-    description: "Secure financial management platform with transaction tracking and investment portfolio analysis.",
-    image: "/fintech-web-application-interface.jpg",
-    tags: ["Next.js", "TypeScript", "Stripe"],
-  },
-]
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/hooks/use-language"
+import { getTranslations } from "@/lib/i18n"
 
 export function PortfolioSection() {
+  const { language } = useLanguage()
+  const t = getTranslations(language)
+
+  const projects = [
+    {
+      title: t.projects.dosArroyosMobile.title,
+      description: t.projects.dosArroyosMobile.description,
+      image: "/dos-arroyos-mobile.png",
+      tags: ["React Native", "Firebase"],
+      styles: 'bg-white',
+    },
+    {
+      title: t.projects.dosArroyosWeb.title,
+      description: t.projects.dosArroyosWeb.description,
+      image: "/dos-arroyos-web.png",
+      tags: ["React", "Node.js"],
+      styles: 'scale-130 bg-white',
+    },
+    {
+      title: t.projects.puertoRanaCatalogo.title,
+      description: t.projects.puertoRanaCatalogo.description,
+      image: "/puerto-rana-catalogo.jpg",
+      tags: ["Next.js", "Tailwind"],
+    },
+    {
+      title: t.projects.puertoRanaGestion.title,
+      description: t.projects.puertoRanaGestion.description,
+      image: "/puerto-rana-admin.png",
+      tags: ["React", "Firebase"],
+      styles: 'scale-100 bg-black/40',
+    },
+  ]
+
   return (
     <section className="py-24 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Our Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.portfolio.title}</h2>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Showcasing our latest projects and successful collaborations
+            {t.portfolio.subtitle}
           </p>
         </div>
 
@@ -46,11 +54,11 @@ export function PortfolioSection() {
               key={index}
               className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 group overflow-hidden"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden opacity-80">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className={`${project.styles} w-full h-48 object-contain group-hover:scale-110 transition-transform duration-300`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
                   <ExternalLink className="w-6 h-6 text-primary" />

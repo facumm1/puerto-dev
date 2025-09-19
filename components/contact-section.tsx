@@ -11,7 +11,7 @@ export function ContactSection() {
   const t = getTranslations(language)
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:hello@puertodev.com"
+    window.location.href = "mailto:facundomamani120@gmail.com"
   }
 
   const handleWhatsAppClick = () => {
@@ -32,7 +32,9 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto"> */}
+        
+        <div className="flex justify-center max-w-3xl mx-auto">
           <Card className="group bg-card/30 backdrop-blur-md border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:bg-card/50 animate-slide-in-up">
             <CardContent className="p-6 sm:p-8 text-center">
               <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-primary/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300 group-hover:animate-pulse-glow">
@@ -43,7 +45,7 @@ export function ContactSection() {
                 {t.contact.email.title}
               </h3>
 
-              <p className="text-accent font-medium mb-3 sm:mb-4 text-sm sm:text-base">hello@puertodev.com</p>
+              {/* <p className="text-accent font-medium mb-3 sm:mb-4 text-sm sm:text-base">hello@puertodev.com</p> */}
 
               <p className="text-sm text-muted-foreground mb-4 sm:mb-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                 {t.contact.email.description}
@@ -63,7 +65,7 @@ export function ContactSection() {
             </div>
           </Card>
 
-          <Card className="group bg-card/30 backdrop-blur-md border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:bg-card/50 animate-slide-in-up delay-200">
+          {/* <Card className="group bg-card/30 backdrop-blur-md border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:bg-card/50 animate-slide-in-up delay-200">
             <CardContent className="p-6 sm:p-8 text-center">
               <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-accent/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent/30 transition-all duration-300 group-hover:animate-pulse-glow">
                 <MessageSquare className="w-7 h-7 sm:w-8 sm:h-8 text-accent" />
@@ -92,10 +94,10 @@ export function ContactSection() {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-primary/5 to-secondary/5 rounded-lg" />
             </div>
-          </Card>
+          </Card> */}
         </div>
 
-        <div className="text-center pt-12 sm:pt-16 animate-fade-in delay-500">
+        {/* <div className="text-center pt-12 sm:pt-16 animate-fade-in delay-500">
           <p className="text-sm text-muted-foreground mb-4 sm:mb-6">{t.contact.social}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {[
@@ -114,7 +116,7 @@ export function ContactSection() {
               </Button>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

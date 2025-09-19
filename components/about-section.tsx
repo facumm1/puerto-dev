@@ -1,5 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Users, Zap, Shield } from "lucide-react"
+
+import { Card, CardContent } from "@/components/ui/card"
+import { useLanguage } from "@/hooks/use-language"
+import { getTranslations } from "@/lib/i18n"
 
 const values = [
   {
@@ -20,26 +23,22 @@ const values = [
 ]
 
 export function AboutSection() {
+  const { language } = useLanguage()
+  const t = getTranslations(language)
+
   return (
     <section className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">About Puerto Dev</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.about.title}</h2>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
-              We are a dedicated software development studio that transforms ideas into powerful digital solutions. Our
-              team combines technical expertise with creative vision to deliver applications that not only meet your
-              requirements but exceed your expectations.
+              {t.about.intro}
             </p>
 
             <div className="space-y-4 mb-8">
-              {[
-                "Scalable architecture and clean code practices",
-                "Agile development methodology",
-                "Comprehensive testing and quality assurance",
-                "Ongoing support and maintenance",
-              ].map((item, index) => (
+              {t.about.checklist.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span className="text-muted-foreground">{item}</span>
@@ -47,7 +46,7 @@ export function AboutSection() {
               ))}
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            {/* <div className="grid grid-cols-3 gap-6">
               {values.map((value, index) => (
                 <div key={index} className="text-center">
                   <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
@@ -57,23 +56,22 @@ export function AboutSection() {
                   <p className="text-xs text-muted-foreground text-pretty">{value.description}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="relative">
             <Card className="bg-card border-border">
               <CardContent className="p-8">
-                <img
+                {/* <img
                   src="/professional-software-development-team-working-tog.jpg"
                   alt="Puerto Dev Team"
                   className="w-full h-64 object-cover rounded-lg mb-6"
-                />
+                /> */}
 
                 <div className="text-center">
-                  <h3 className="text-xl font-semibold mb-2 text-card-foreground">Our Mission</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-card-foreground">{t.about.missionTitle}</h3>
                   <p className="text-muted-foreground text-pretty">
-                    To empower businesses with innovative software solutions that drive growth, efficiency, and
-                    competitive advantage in the digital landscape.
+                    {t.about.mission}
                   </p>
                 </div>
               </CardContent>

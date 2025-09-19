@@ -15,14 +15,14 @@ export function ServicesSection() {
       title: t.services.mobile.title,
       description: t.services.mobile.description,
       shortText: t.services.mobile.shortText,
-      image: "/modern-mobile-app-interface.png",
+      image: "/web-mobile-service.png",
     },
     {
       icon: Globe,
       title: t.services.web.title,
       description: t.services.web.description,
       shortText: t.services.web.shortText,
-      image: "/modern-web-dashboard.png",
+      image: "/fintech-web-application-interface.jpg",
     },
     {
       icon: BarChart3,

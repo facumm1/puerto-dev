@@ -1,11 +1,12 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { useState } from "react"
 import { Menu, X, Globe } from "lucide-react"
-import { FrogLogo } from "./frog-logo"
+
+import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/hooks/use-language"
 import { getTranslations } from "@/lib/i18n"
-import { useState } from "react"
+import { Avatar, AvatarImage } from "./ui/avatar"
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,7 +37,10 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-3">
-            <FrogLogo size={40} className="animate-pulse-glow" />
+            <Avatar className="animate-pulse-glow">
+              <AvatarImage src="/logo.jpg" alt="Avatar"  />
+            </Avatar>
+
             <span className="text-2xl font-bold text-primary font-sans">Puerto Dev</span>
           </div>
 
@@ -57,7 +61,7 @@ export function Navigation() {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center gap-2 text-foreground/80 hover:text-primary"
+              className="flex items-center gap-2 text-foreground/80 hover:text-black"
             >
               <Globe className="w-4 h-4" />
               {language.toUpperCase()}
