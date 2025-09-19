@@ -6,6 +6,7 @@ import { ServicesSection } from "@/components/services-section"
 import { PortfolioSection } from "@/components/portfolio-section"
 import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
+import { AnimatePresence } from "@/components/animations/animate-presence"
 
 export default function HomePage() {
   return (
@@ -29,19 +30,27 @@ export default function HomePage() {
           <HeroSection />
         
           <div id="services">
-            <ServicesSection />
+            <AnimatePresence>
+              <ServicesSection />
+            </AnimatePresence>
           </div>
           
           <div id="portfolio">
-            <PortfolioSection />
+            <AnimatePresence>
+              <PortfolioSection />
+            </AnimatePresence>
           </div>
 
           <div id="about">
-            <AboutSection />
+            <AnimatePresence>
+              <AboutSection />
+            </AnimatePresence>
           </div>
           
           <div id="contact">
-            <ContactSection />
+            <AnimatePresence>
+              <ContactSection />
+            </AnimatePresence>
           </div>
         </div>
       </main>
