@@ -19,10 +19,10 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Puerto Dev - Software Development Studio",
+  title: "Puerto Dev",
   description:
-    "We build mobile apps, web apps, and turn data into insights. Professional software development services.",
-  generator: "v0.app",
+    "Desarrollamos experiencias digitales a tu medida.",
+  //generator: "v0.app",
 }
 
 export default function RootLayout({
