@@ -11,7 +11,7 @@ export function ContactSection() {
   const t = getTranslations(language)
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:facundomamani120@gmail.com"
+    window.location.href = "mailto:puertodevcontacto@gmail.com"
   }
 
   const handleWhatsAppClick = () => {

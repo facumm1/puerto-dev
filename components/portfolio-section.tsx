@@ -41,7 +41,7 @@ export function PortfolioSection() {
       title: t.projects.puertoRanaCatalogo.title,
       description: t.projects.puertoRanaCatalogo.description,
       image: '/puerto-rana-menu.png',
-      tags: ['Next.js', 'Tailwind'],
+      tags: ['Next.js', 'Tailwind', 'Python', 'AWS', 'Firebase'],
       href: 'https://puerto-rana.vercel.app',
       styles: 'scale-100 bg-black/40',
     },
@@ -49,7 +49,7 @@ export function PortfolioSection() {
       title: t.projects.puertoRanaGestion.title,
       description: t.projects.puertoRanaGestion.description,
       image: '/puerto-rana-admin.png',
-      tags: ['React.js', 'Firebase'],
+      tags: ['React.js', 'Tailwind', 'Python', 'AWS', 'Firebase'],
       styles: 'scale-100 bg-black/40',
       slideshow: [
         '/rana-admin-1.png',
