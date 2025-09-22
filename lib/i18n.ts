@@ -154,7 +154,7 @@ export const translations: Record<Language, Translations> = {
         description: "Internal web platform to manage operations, update currency rates, and handle orders.",
       },
       puertoRanaCatalogo: {
-        title: "Puerto Rana - Catalog",
+        title: "Puerto Rana - Menu",
         description: "Web application to showcase products and facilitate customer orders, built with Next.js.",
       },
       puertoRanaGestion: {
@@ -241,7 +241,7 @@ export const translations: Record<Language, Translations> = {
         description: "Plataforma web interna para gestionar operaciones, actualizar precios de divisas y administrar pedidos.",
       },
       puertoRanaCatalogo: {
-        title: "Puerto Rana - Catálogo",
+        title: "Puerto Rana - Menu",
         description: "Aplicación web para mostrar productos y facilitar pedidos de clientes, construida con Next.js.",
       },
       puertoRanaGestion: {
